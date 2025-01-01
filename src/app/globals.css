@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Corpo del documento */
+/*! Corpo del documento */
 body {
   @apply text-gray-800 bg-gray-50; /* Usa direttamente classi Tailwind per i colori */
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Classi personalizzate per il layout */
+/*! Classi personalizzate per il layout */
 .bg-sidebar {
   @apply bg-gray-100 p-4 border-r border-gray-200;
 }
@@ -41,7 +41,7 @@ body {
   @apply flex-1 flex;
 }
 
-/* Classi personalizzate per FileUploader */
+/*! Classi personalizzate per FileUploader */
 .file-uploader-title {
   @apply text-lg font-bold mb-4;
 }
@@ -64,4 +64,17 @@ body {
 
 .file-iframe {
   @apply w-full h-64 border border-gray-300 rounded mt-4;
+}
+
+/*! Classi per la visualizzazione dei file caricati */
+.file-card {
+  @apply flex items-center p-4 bg-white shadow rounded-lg cursor-pointer hover:shadow-lg transition mt-2;
+}
+
+.file-icon {
+  @apply mr-3 text-blue-500;
+}
+
+.file-name {
+  @apply text-gray-800 font-medium truncate;
 }

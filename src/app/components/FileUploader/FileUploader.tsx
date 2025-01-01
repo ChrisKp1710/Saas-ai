@@ -2,7 +2,7 @@
 "use client";
 
 interface FileUploaderProps {
-  onFilePreview: (filePreview: string | null) => void;
+  onFilePreview: (filePreview: string, fileName: string) => void;
 }
 
 export default function FileUploader({ onFilePreview }: FileUploaderProps) {
@@ -10,7 +10,7 @@ export default function FileUploader({ onFilePreview }: FileUploaderProps) {
     const uploadedFile = e.target.files?.[0];
     if (uploadedFile) {
       const fileUrl = URL.createObjectURL(uploadedFile);
-      onFilePreview(fileUrl);
+      onFilePreview(fileUrl, uploadedFile.name);
     }
   };
 
