@@ -15,13 +15,19 @@ export default function FileUploader({ onFilePreview }: FileUploaderProps) {
   };
 
   return (
-    <div>
-      <h2 className="file-uploader-title">Carica un File</h2>
+    <div className="text-center">
+      <label
+        htmlFor="file-upload"
+        className="cursor-pointer bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700"
+      >
+        Carica un File
+      </label>
       <input
+        id="file-upload"
         type="file"
         accept=".pdf,.doc,.docx,.txt,.md"
         onChange={handleFileUpload}
-        className="file-input"
+        className="hidden"
       />
     </div>
   );
