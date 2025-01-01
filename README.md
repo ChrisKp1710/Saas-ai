@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+SaaS-AI-readme.txt
+-------------------------------------------------------------------
 
-## Getting Started
+# SaaS-AI
 
-First, run the development server:
+Questo progetto nasce come base per un SaaS in Next.js 13+ (con app router), TypeScript e Tailwind CSS.  
+L’obiettivo finale è sviluppare un’applicazione che permetta di:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Caricare e leggere documenti (PDF, DOC, MD, ecc.)
+2. Generare riassunti (breve e avanzato)
+3. Conversare con un’AI su parti specifiche del testo
+4. Convertire i file in formati differenti
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-------------------------------------------------------------------
+## Struttura del Progetto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+SAAS-AI/
+  ├─ node_modules/             # dipendenze installate
+  ├─ public/                   # assets statici (SVG, immagini, ecc.)
+  │   ├─ file.svg
+  │   ├─ globe.svg
+  │   ├─ next.svg
+  │   ├─ vercel.svg
+  │   └─ window.svg
+  ├─ src/
+  │   └─ app/                  # cartella principale con app router (Next.js 13+)
+  │       ├─ favicon.ico
+  │       ├─ globals.css
+  │       ├─ layout.tsx
+  │       └─ page.tsx
+  ├─ .gitignore
+  ├─ eslint.config.mjs
+  ├─ next-env.d.ts
+  ├─ next.config.ts            # configurazione di Next.js
+  ├─ package-lock.json
+  ├─ package.json
+  ├─ postcss.config.mjs        # configurazione PostCSS (necessario per Tailwind)
+  ├─ tailwind.config.ts        # configurazione Tailwind CSS
+  ├─ tsconfig.json             # configurazione TypeScript
+  └─ README.md                 # (o SaaS-AI-readme.txt, se stai usando questo file)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-------------------------------------------------------------------
+### Cartelle / File Principali
 
-## Learn More
+- **src/app/**
+  - layout.tsx: Layout principale, che avvolge tutte le pagine.
+  - page.tsx: Pagina iniziale (root) del progetto.
+  - globals.css: File CSS globale (in cui importare Tailwind CSS e stili condivisi).
 
-To learn more about Next.js, take a look at the following resources:
+- **public/**
+  - Contiene i file statici serviti direttamente da Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **next.config.ts**
+  - Eventuali configurazioni personalizzate di Next.js (redirect, rewrite, impostazioni sperimentali, ecc.).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **tailwind.config.ts** e **postcss.config.mjs**
+  - File di configurazione di Tailwind CSS e PostCSS.
 
-## Deploy on Vercel
+- **tsconfig.json**
+  - Configurazione TypeScript (strict mode, path alias, ecc.).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **.gitignore**
+  - File per ignorare cartelle o file che non vuoi tracciare su Git (es. node_modules).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **eslint.config.mjs**
+  - Configurazione ESLint per mantenere uno stile di codice coerente.
+
+-------------------------------------------------------------------
+## Tecnologie Principali
+
+1. **Next.js 13+** (App Router)  
+   - Framework React con funzioni di routing, SSR, API e molto altro già integrato.
+
+2. **TypeScript**  
+   - Tipizzazione statica per maggiore robustezza del codice.
+
+3. **Tailwind CSS**  
+   - Framework CSS utility-first per creare UI moderne e responsive in modo rapido.
+
+4. **Node.js e npm**  
+   - Runtime e package manager per installare le dipendenze.
+
+(In seguito potresti aggiungere la parte di AI, conversione file, librerie specifiche, ecc.)
+
+-------------------------------------------------------------------
+## Requisiti e Installazione
+
+1. Assicurati di avere Node.js (versione 16 o superiore).
+2. npm (o in alternativa yarn/pnpm) per installare le dipendenze.
+
+### Setup del Progetto
+
+    # Clona il repository
+    git clone https://github.com/<utente>/<nome-repo>.git
+    cd <nome-repo>
+
+    # Installa le dipendenze
+    npm install
+
+    # Avvia l'ambiente di sviluppo
+    npm run dev
+
+Una volta avviato, l’app sarà disponibile di default su http://localhost:3000.
+
+-------------------------------------------------------------------
+## Scripts Principali
+
+- **npm run dev**  
+  Avvia l’applicazione in modalità sviluppo (hot reload).
+
+- **npm run build**  
+  Compila il progetto per la produzione.
+
+- **npm run start**  
+  Avvia la versione buildata in produzione (esegui prima npm run build).
+
+- **npm run lint**  
+  Analizza il codice con ESLint per individuare (e spesso correggere) problemi di stile o errori.
+
+-------------------------------------------------------------------
+## Deployment
+
+- **Vercel**: consigliato per Next.js. Collegando il repo, la piattaforma crea build e deploy automatici.
+- Altre opzioni: Netlify o soluzioni self-hosted (ad esempio Docker) per maggiore controllo.
+
+-------------------------------------------------------------------
+## Roadmap (Esempio)
+
+1. Caricamento documenti (PDF, DOC, MD)
+2. Generazione riassunti – breve e avanzato
+3. Chat con l’AI – conversazione interattiva sul contenuto dei documenti
+4. Conversione formati – PDF ↔ DOC, ecc.
+5. Integrazione pagamento – abbonamenti una tantum (settimana, mese, anno)
+6. Ottimizzazione e refactoring – performance, code splitting, caching
+7. Deployment stabile su Vercel
+
+-------------------------------------------------------------------
+## Contributi
+
+Per ora il progetto è sviluppato in autonomia. Se in futuro vorrai ricevere contributi esterni:
+
+- **Fork & Pull Request**: consenti agli altri di proporre modifiche.
+- **Stile di codice e Conformità**: rispetta ESLint, Prettier (se impostato), e best practice.
+
+-------------------------------------------------------------------
+## Licenza
+
+*(Facoltativo)*: Se desideri rilasciare il codice con una licenza aperta (es. MIT License), altrimenti
+puoi specificare “Tutti i diritti riservati” o una licenza personalizzata.
+
+-------------------------------------------------------------------
+## Riferimenti e Documentazione
+
+- [Next.js Docs](https://nextjs.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [TypeScript Docs](https://www.typescriptlang.org/docs)
+- [Vercel Docs](https://vercel.com/docs)
+
+*(Aggiorna o aggiungi ulteriori risorse man mano che integri nuove tecnologie.)*
+
+-------------------------------------------------------------------
+### Autore
+
+- **[Tuo Nome]** – Sviluppatore Principale  
+  - [LinkedIn / Twitter / Sito Web - opzionale]
+
+-------------------------------------------------------------------
+## Note Finali
+
+Questo README è una base iniziale. Aggiornalo regolarmente con:
+
+- **Nuove funzionalità**: descrizioni e screenshot.
+- **Istruzioni aggiuntive**: come impostare variabili d’ambiente, usare l’API, ecc.
+
+Buono sviluppo!
+-------------------------------------------------------------------
