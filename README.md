@@ -161,7 +161,7 @@ puoi specificare “Tutti i diritti riservati” o una licenza personalizzata.
 -------------------------------------------------------------------
 ### Autore
 
-- **[Tuo Nome]** – Sviluppatore Principale  
+- **[Christian Koscielniak Pinto]** – Sviluppatore Principale  
   - [LinkedIn / Twitter / Sito Web - opzionale]
 
 -------------------------------------------------------------------
